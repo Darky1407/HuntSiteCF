@@ -1,0 +1,353 @@
+#gibberish {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+}
+body {
+  margin: 0;
+  background: #1a1a1a;
+  color: #b0b0b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+#startBtn {
+  padding: 20px 50px;
+  background-color: #232323;
+  border: 1px solid rgb(201, 194, 194);
+  color: gray;
+  letter-spacing: 4px;
+  cursor: pointer;
+  animation: flicker 4s infinite;
+  position: relative;
+  z-index: 1;
+  opacity: 0.1;
+  font-family: inherit;
+  border-radius: 999px;
+}
+
+#poemImage {
+  max-width: 70vw;
+  max-height: 75vh;
+  filter: grayscale(1) contrast(1.1) brightness(0.85);
+  box-shadow: 0 0 120px 40px rgba(0, 0, 0, 0.9);
+  mix-blend-mode: screen;
+}
+
+#continue {
+  position: relative;
+  z-index: 3;
+  margin-top: 30px;
+  text-align: center;
+}
+#continueBtn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease;
+  border-radius: 999px;
+}
+#continueBtn:hover {
+  color: #999;
+  border-color: #777;
+}
+#stage1Content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 80vw;
+}
+.flavor {
+  color: #666;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+#stage1Image {
+  max-width: 60vw;
+  max-height: 55vh;
+}
+#answerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+#answerInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  color: #b0b0b0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  width: 260px;
+}
+#submitBtn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  cursor: pointer;
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease;
+  border-radius: 999px;
+}
+#submitBtn:hover {
+  color: #999;
+  border-color: #777;
+}
+#feedback {
+  color: #555;
+  font-size: 0.75rem;
+  min-height: 1em;
+}
+#riddleText {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+.hidden {
+  display: none !important;
+}
+
+#riddleBlock button {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  cursor: pointer;
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease;
+  border-radius: 999px;
+}
+#riddleBlock button:hover {
+  color: #999;
+  border-color: #777;
+}
+#stage2Content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 80vw;
+}
+#stage3Content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 80vw;
+}
+#stage3Audio {
+  filter: grayscale(1) invert(0.85);
+}
+#playerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+#visualizer {
+  background: #111;
+  border: 1px solid #333;
+}
+#playBtn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  cursor: pointer;
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease;
+}
+#playBtn:hover {
+  color: #999;
+  border-color: #777;
+}
+#stage4Content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 80vw;
+}
+#stage4Image {
+  max-width: 60vw;
+  max-height: 60vh;
+}
+
+#stage5Content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 80vw;
+}
+#alphabetImage {
+  max-width: 70vw;
+  max-height: 60vh;
+}
+
+#finalLink {
+  position: relative;
+  z-index: 10;
+}
+#finalContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 80vw;
+}
+#finalLink button {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  cursor: pointer;
+  transition: color 0.5s ease, border-color 0.5s ease;
+  border-radius: 999px;
+  
+}
+#finalLink button:hover {
+  color: #999;
+  border-color: #777;
+}
+
+#contactLink {
+  color: #777;
+  display: inline-flex;
+  transition: color 0.5s ease, transform 0.3s ease;
+}
+#contactLink:hover {
+  color: #ccc;
+  transform: scale(1.1);
+}
+
+#landingContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2px;
+  max-width: 40vw;
+}
+
+#nameBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+#nameInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  color: #b0b0b0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  width: 260px;
+}
+#nameSubmitBtn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  cursor: pointer;
+  transition: color 0.5s ease, border-color 0.5s ease;
+  border-radius: 999px;
+}
+#nameSubmitBtn:hover {
+  color: #999;
+  border-color: #777;
+}
+#thanksMsg {
+  color: #777;
+  font-size: 0.85rem;
+}
+.hidden { display: none !important; }
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

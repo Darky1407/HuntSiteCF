@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="gibberish"></canvas>
+
+    <!-- nothing here reveals itself. you must ask for what is hidden. it takes no arguments. only the calling. -->
+
+    <div id="stage2Content">
+      <p class="flavor">it will not show itself.</p>
+
+      <div id="answerBlock">
+        <input
+          type="text"
+          id="answerInput"
+          placeholder="what did it say"
+          autocomplete="off"
+        />
+        <button id="submitBtn">confirm</button>
+        <p id="feedback"></p>
+      </div>
+
+      <div id="riddleBlock" class="hidden">
+        <p id="riddleText"></p>
+        <button id="nextStageBtn">continue</button>
+      </div>
+    </div>
+
+    <script src="matrix.js"></script>
+    <script src="stage2.js"></script>
+  </body>
+</html>

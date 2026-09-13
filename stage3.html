@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="gibberish"></canvas>
+
+    <div id="stage3Content">
+
+      <div id="playerBox">
+        <canvas id="visualizer" width="500" height="120"></canvas>
+        <button id="playBtn">▶ play</button>
+      </div>
+      <audio id="stage3Audio" src="stage3.wav" preload="auto"></audio>
+
+      <div id="answerBlock">
+        <input type="text" id="answerInput" placeholder="what was hidden" autocomplete="off" />
+        <button id="submitBtn">confirm</button>
+        <p id="feedback"></p>
+      </div>
+
+      <div id="riddleBlock" class="hidden">
+        <p id="riddleText"></p>
+        <button id="nextStageBtn">continue</button>
+      </div>
+    </div>
+
+    <script src="matrix.js"></script>
+    <script src="stage3.js"></script>
+  </body>
+</html>

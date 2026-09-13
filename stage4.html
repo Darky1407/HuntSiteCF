@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="gibberish"></canvas>
+
+    <div id="stage4Content">
+      <p class="flavor">It is not small. You are simply not close enough ... or perhaps too close entirely.</p>
+
+      <img id="stage4Image" src="svsdvhxv.png" alt="" />
+
+      <div id="answerBlock">
+        <input
+          type="text"
+          id="answerInput"
+          placeholder="enter the word"
+          autocomplete="off"
+        />
+        <button id="submitBtn">confirm</button>
+        <p id="feedback"></p>
+      </div>
+
+      <div id="riddleBlock" class="hidden">
+        <p id="riddleText"></p>
+        <button id="nextStageBtn">continue</button>
+      </div>
+    </div>
+
+    <script src="matrix.js"></script>
+    <script src="stage4.js"></script>
+  </body>
+</html>
