@@ -7,7 +7,17 @@
   </head>
   <body>
     <canvas id="gibberish"></canvas>
-    <button id="startBtn">ENTER</button>
+
+    <div id="usernameGate">
+      <p class="flavor">what do you call yourself?</p>
+      <input type="text" id="usernameInput" placeholder="a name" autocomplete="off" />
+      <button id="usernameSubmit">begin</button>
+      <p id="usernameFeedback"></p>
+    </div>
+
+    <div id="startWrap" class="hidden">
+      <button id="startBtn">ENTER</button>
+    </div>
     <audio id="introAudio"></audio>
 
     <script src="matrix.js"></script>
