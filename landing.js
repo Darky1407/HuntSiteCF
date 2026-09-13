@@ -1,6 +1,19 @@
-if (sessionStorage.getItem('finalcomplete') !== 'true') {
-  window.location.href = 'final.html';
+async function checkGate(requiredStage) {
+  const username = localStorage.getItem('huntUsername');
+  if (!username) {
+    window.location.href = 'index.html';
+    return;
+  }
+  const res = await fetch('/check-progress', {
+    method: 'POST',
+    body: JSON.stringify({ username: username, stage: requiredStage }),
+  });
+  const data = await res.json();
+  if (!data.complete) {
+    window.location.href = 'final.html';
+  }
 }
+checkGate('final');
 
 const nameInput = document.getElementById('nameInput');
 const nameSubmitBtn = document.getElementById('nameSubmitBtn');
@@ -11,7 +24,7 @@ nameSubmitBtn.addEventListener('click', async function () {
   const name = nameInput.value.trim();
   if (!name) return;
 
-  await fetch('/.netlify/functions/notify-complete', {
+  await fetch('/notify-complete', {
     method: 'POST',
     body: JSON.stringify({ name: name, time: new Date().toISOString() }),
   }).catch(function () {

@@ -48,7 +48,10 @@ async function getFirebaseAccessToken(env) {
 }
 
 function pemToBuffer(pem) {
-  const b64 = pem.replace(/-----[^-]+-----/g, "").replace(/\s/g, "");
+  const b64 = pem
+    .replace(/-----[^-]+-----/g, "")
+    .replace(/\\n/g, "")
+    .replace(/\s/g, "");
   const binary = atob(b64);
   const buffer = new Uint8Array(binary.length);
   for (let i = 0; i < binary.length; i++) buffer[i] = binary.charCodeAt(i);

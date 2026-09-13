@@ -17,10 +17,16 @@ async function checkAnswer() {
   const data = await response.json();
 
   if (data.correct) {
+    const username = localStorage.getItem('huntUsername');
+
+    await fetch('/mark-complete', {
+      method: 'POST',
+      body: JSON.stringify({ username: username, stage: 'stage1' }),
+    });
+
     answerBlock.classList.add('hidden');
     riddleText.textContent = NAV_RIDDLE;
     riddleBlock.classList.remove('hidden');
-    sessionStorage.setItem('stage1complete', 'true');
   } else {
     feedback.textContent = 'incorrect.';
   }

@@ -1,9 +1,21 @@
-if (sessionStorage.getItem('stage3complete') !== 'true') {
-  window.location.href = 'stage3.html';
+async function checkGate(requiredStage) {
+  const username = localStorage.getItem('huntUsername');
+  if (!username) {
+    window.location.href = 'index.html';
+    return;
+  }
+  const res = await fetch('/check-progress', {
+    method: 'POST',
+    body: JSON.stringify({ username: username, stage: requiredStage }),
+  });
+  const data = await res.json();
+  if (!data.complete) {
+    window.location.href = 'stage3.html';
+  }
 }
+checkGate('stage3');
 
-
-const NAV_RIDDLE = "The final fragment does not hide. It waits where you last looked away.";
+const NAV_RIDDLE = "You have gathered every piece it was willing to give. What remains does not wait to be found — it waits to be given.";
 
 const input = document.getElementById('answerInput');
 const btn = document.getElementById('submitBtn');
@@ -22,10 +34,16 @@ async function checkAnswer() {
   const data = await response.json();
 
   if (data.correct) {
+    const username = localStorage.getItem('huntUsername');
+
+    await fetch('/mark-complete', {
+      method: 'POST',
+      body: JSON.stringify({ username: username, stage: 'stage4' }),
+    });
+
     answerBlock.classList.add('hidden');
     riddleText.textContent = NAV_RIDDLE;
     riddleBlock.classList.remove('hidden');
-    sessionStorage.setItem('stage4complete', 'true');
   } else {
     feedback.textContent = 'incorrect.';
   }

@@ -1,7 +1,18 @@
+async function checkStage5Complete() {
+  const username = localStorage.getItem('huntUsername');
+  if (!username) return;
 
-if (sessionStorage.getItem('stage5complete') === 'true') {
-  document.getElementById('finalLink').classList.remove('hidden');
+  const res = await fetch('/check-progress', {
+    method: 'POST',
+    body: JSON.stringify({ username: username, stage: 'stage5' }),
+  });
+  const data = await res.json();
+
+  if (data.complete) {
+    document.getElementById('finalLink').classList.remove('hidden');
+  }
 }
+checkStage5Complete();
 
 document.getElementById('finalBtn').addEventListener('click', function () {
   window.location.href = 'final.html';
