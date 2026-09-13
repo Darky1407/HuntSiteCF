@@ -12,6 +12,9 @@ async function checkGate(requiredStage) {
   if (!data.complete) {
     window.location.href = 'stage2.html';
   }
+   else {
+    document.getElementById('stage3Content').style.display = 'flex';
+  }
 }
 checkGate('stage2');
 

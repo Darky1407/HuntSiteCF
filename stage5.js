@@ -11,6 +11,8 @@ async function checkGate(requiredStage) {
   const data = await res.json();
   if (!data.complete) {
     window.location.href = 'stage4.html';
+  } else {
+    document.getElementById('stage5Content').style.display = 'flex';
   }
 }
 checkGate('stage4');
