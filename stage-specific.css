@@ -23,3 +23,11 @@
   color: #ccc;
   transform: scale(1.1);
 }
+#captionText {
+  color: #888;
+  font-size: 0.85rem;
+  min-height: 1.5em;
+  max-width: 500px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}

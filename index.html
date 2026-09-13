@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="stylesheet" href="page-layouts.css" />
+    <link rel="stylesheet" href="stage-specific.css" />
   </head>
   <body>
     <canvas id="gibberish"></canvas>
 
     <div id="usernameGate">
       <p class="flavor">what do you call yourself?</p>
-      <input type="text" id="usernameInput" placeholder="a name" autocomplete="off" />
+      <input
+        type="text"
+        id="usernameInput"
+        placeholder="a name"
+        autocomplete="off"
+      />
       <button id="usernameSubmit">begin</button>
       <p id="usernameFeedback"></p>
     </div>

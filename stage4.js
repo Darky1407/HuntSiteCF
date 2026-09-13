@@ -15,7 +15,7 @@ async function checkGate(requiredStage) {
 }
 checkGate('stage3');
 
-const NAV_RIDDLE = "You have gathered every piece it was willing to give. What remains does not wait to be found — it waits to be given.";
+const NAV_RIDDLE = "The search is over. Now it only has to give.";
 
 const input = document.getElementById('answerInput');
 const btn = document.getElementById('submitBtn');

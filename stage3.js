@@ -15,14 +15,34 @@ async function checkGate(requiredStage) {
 }
 checkGate('stage2');
 
-const NAV_RIDDLE = "The final fragment does not hide. It waits where you last looked away.";
+const NAV_RIDDLE = "It was never about what's missing. It was about how much light you're willing to let in.";
 const audio = document.getElementById('stage3Audio');
 const playBtn = document.getElementById('playBtn');
 const vizCanvas = document.getElementById('visualizer');
 const vizCtx = vizCanvas.getContext('2d');
+const captionText = document.getElementById('captionText');
 
 let audioCtx, analyser, source, dataArray, bufferLength;
 let isPlaying = false;
+
+const captions = [
+  { time: 0, text: "The pattern is not complete." },
+  { time: 3, text: "What remains is hidden where sound becomes shape." },
+  { time: 7, text: "Look closely at what you cannot hear." },
+];
+
+function updateCaptions() {
+  if (!audio.duration) return;
+  const currentTime = audio.currentTime;
+  let activeCaption = "";
+  for (const c of captions) {
+    if (currentTime >= c.time) {
+      activeCaption = c.text;
+    }
+  }
+  captionText.textContent = activeCaption;
+}
+audio.addEventListener('timeupdate', updateCaptions);
 
 function setupAudioGraph() {
   if (audioCtx) return;

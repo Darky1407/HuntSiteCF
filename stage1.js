@@ -1,4 +1,4 @@
-const NAV_RIDDLE = "Where color lies but truth stays long, the second fragment waits beyond.";
+const NAV_RIDDLE = "It will not show itself, but it will answer those who ask. The second fragment waits beyond.";
 
 const input = document.getElementById('answerInput');
 const btn = document.getElementById('submitBtn');

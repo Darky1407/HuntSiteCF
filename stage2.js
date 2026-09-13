@@ -15,7 +15,7 @@ async function checkGate(requiredStage) {
 }
 checkGate('stage1');
 
-const NAV_RIDDLE = "Where symbols hide behind a listening ear, the third fragment waits near.";
+const NAV_RIDDLE = "Sound carries more than it says. The third fragment rides beneath it.";
 window.reveal = function () {
   const codes = [88, 69, 78, 79, 76, 73, 84, 72];
   const word = String.fromCharCode(...codes);
