@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="stylesheet" href="page-layouts.css" />
+    <link rel="stylesheet" href="stage-specific.css" />
   </head>
   <body>
     <canvas id="gibberish"></canvas>
 
     <div id="stage3Content">
-
       <div id="playerBox">
         <canvas id="visualizer" width="500" height="120"></canvas>
         <button id="playBtn">▶ play</button>
@@ -17,7 +19,12 @@
       <audio id="stage3Audio" src="stage3.wav" preload="auto"></audio>
 
       <div id="answerBlock">
-        <input type="text" id="answerInput" placeholder="what was hidden" autocomplete="off" />
+        <input
+          type="text"
+          id="answerInput"
+          placeholder="what was hidden"
+          autocomplete="off"
+        />
         <button id="submitBtn">confirm</button>
         <p id="feedback"></p>
       </div>

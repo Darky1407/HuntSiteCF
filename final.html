@@ -3,16 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="stylesheet" href="page-layouts.css" />
+    <link rel="stylesheet" href="stage-specific.css" />
   </head>
   <body>
     <canvas id="gibberish"></canvas>
 
     <div id="finalContent">
-      <p class="flavor">You have read it. Somewhere in it, something did not belong.</p>
+      <p class="flavor">
+        You have read it. Somewhere in it, something did not belong.
+      </p>
 
       <div id="answerBlock">
-        <input type="text" id="answerInput" placeholder="what did not belong?" autocomplete="off" />
+        <input
+          type="text"
+          id="answerInput"
+          placeholder="what did not belong?"
+          autocomplete="off"
+        />
         <button id="submitBtn">confirm</button>
         <p id="feedback"></p>
       </div>

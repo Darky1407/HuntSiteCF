@@ -1,0 +1,49 @@
+.btn, #startBtn, #continueBtn, #submitBtn, #riddleBlock button,
+#playBtn, #finalLink button, #nameSubmitBtn, #usernameSubmit {
+  background: transparent;
+  border: 1px solid #444;
+  color: #555;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.btn:hover, #startBtn:hover, #continueBtn:hover, #submitBtn:hover,
+#riddleBlock button:hover, #playBtn:hover, #finalLink button:hover,
+#nameSubmitBtn:hover, #usernameSubmit:hover {
+  color: #999;
+  border-color: #777;
+}
+
+#startBtn {
+  padding: 20px 50px;
+  background-color: #232323;
+  border: 1px solid rgb(201, 194, 194);
+  animation: flicker 4s infinite;
+  position: relative;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.text-input, #answerInput, #nameInput, #usernameInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  color: #b0b0b0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  width: 260px;
+}
+
+#feedback, #thanksMsg, #usernameFeedback {
+  color: #555;
+  font-size: 0.75rem;
+  min-height: 1em;
+}
