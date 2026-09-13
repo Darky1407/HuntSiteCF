@@ -1,3 +1,7 @@
+document.getElementById('instructionsContinue').addEventListener('click', function () {
+  document.getElementById('instructions').classList.add('hidden');
+  document.getElementById('usernameGate').classList.remove('hidden');
+});
 function getUsername() {
   return localStorage.getItem("huntUsername");
 }
