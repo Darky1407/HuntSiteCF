@@ -1,3 +1,11 @@
+const audio = document.getElementById('introAudio');
+
+if (!localStorage.getItem('introPlayed')) {
+  audio.play().catch(function () {
+  });
+  localStorage.setItem('introPlayed', 'true');
+}
+
 async function checkStage5Complete() {
   const username = localStorage.getItem('huntUsername');
   if (!username) return;

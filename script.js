@@ -51,9 +51,11 @@ if (existingName) {
 const btn = document.getElementById("startBtn");
 const audio = document.getElementById("introAudio");
 
-btn.addEventListener("click", function () {
-  audio.src = "intro.mp3";
-  audio.play();
+
+
+
+btn.addEventListener('click', function () {
+  window.location.href = 'poem.html';
 });
 
 audio.addEventListener("ended", function () {
